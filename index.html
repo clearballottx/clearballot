@@ -1,0 +1,1395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ClearBallot — May 26, 2026 Primary Runoff · Rockwall County</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+
+/* ═══════════════════════════════════════
+   SCREEN STYLES
+═══════════════════════════════════════ */
+
+:root {
+  --ink: #0f0e0c;
+  --paper: #f2ede4;
+  --warm-white: #faf8f4;
+  --cream: #ede7d6;
+  --rule: #c9bfad;
+  --muted: #7a7268;
+  --accent: #1b4332;
+  --accent-light: #2d6a4f;
+  --accent-glow: rgba(27,67,50,0.1);
+  --gold: #b5882a;
+  --body: #2c2416;
+  --tag: #e4ddd0;
+  --r: #8b1a1a;
+  --d: #1a3a6b;
+  --src-v: #2a6e2a;
+  --src-s: #7a5a1a;
+  --src-m: #6b3e7a;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'DM Sans', system-ui, sans-serif;
+  background: var(--paper);
+  color: var(--body);
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+/* ── SITE HEADER ── */
+.site-header {
+  background: var(--ink);
+  padding: .75rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 3px solid var(--accent);
+}
+.logo {
+  display: flex; align-items: baseline; gap: .4rem;
+  text-decoration: none;
+}
+.logo-word {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 900; font-size: 1.4rem;
+  color: #f2ede4; letter-spacing: -.02em;
+}
+.logo-word span { color: #52c97e; }
+.logo-badge {
+  font-family: 'DM Mono', monospace;
+  font-size: .58rem; font-weight: 500;
+  color: #605a50; letter-spacing: .12em;
+  text-transform: uppercase;
+  border: 1px solid #2a2720;
+  padding: .12rem .38rem; border-radius: 2px;
+}
+.header-tagline {
+  font-family: 'DM Mono', monospace;
+  font-size: .6rem; letter-spacing: .12em;
+  text-transform: uppercase;
+  color: #605a50;
+}
+
+/* ── RUNOFF EXPLAINER ── */
+.runoff-explainer {
+  background: var(--accent);
+  color: white;
+  padding: 1.1rem 1.5rem;
+}
+.runoff-explainer-inner {
+  max-width: 900px; margin: 0 auto;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: .75rem 1.25rem;
+  align-items: start;
+}
+.runoff-icon { font-size: 1.5rem; line-height: 1; padding-top: .1rem; }
+.runoff-explainer h2 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: .95rem; font-weight: 700;
+  margin-bottom: .2rem; color: white;
+}
+.runoff-explainer p {
+  font-size: .8rem; line-height: 1.6;
+  color: rgba(255,255,255,.85);
+}
+
+/* ── NOTICE BAR ── */
+.notice-bar {
+  background: #faf8f4;
+  border-bottom: 1px solid var(--rule);
+  padding: .75rem 1.5rem;
+  font-size: .78rem; color: var(--muted);
+}
+.notice-bar-inner { max-width: 900px; margin: 0 auto; }
+.src-v { color: var(--src-v); font-weight: 600; font-style: normal; }
+.src-s { color: var(--src-s); font-weight: 600; font-style: normal; }
+.src-m { color: var(--src-m); font-weight: 600; font-style: normal; }
+
+/* ── LAYOUT ── */
+.wrap { max-width: 900px; margin: 0 auto; padding: 0 1.25rem; }
+
+/* ── VOTING INFO GRID ── */
+.info-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin: 1.5rem 0 0;
+}
+.info-box {
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+  overflow: hidden;
+}
+.info-box-head {
+  background: var(--ink);
+  color: white;
+  padding: .5rem .9rem;
+  font-family: 'DM Mono', monospace;
+  font-size: .62rem;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+.info-box-body { background: var(--warm-white); padding: .9rem; }
+
+/* Dates table */
+.dates-list { list-style: none; }
+.dates-list li {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: .5rem;
+  font-size: .8rem;
+  padding: .3rem 0;
+  border-bottom: 1px solid var(--cream);
+  align-items: baseline;
+}
+.dates-list li:last-child { border-bottom: none; }
+.date-label {
+  font-family: 'DM Mono', monospace;
+  font-size: .65rem;
+  letter-spacing: .08em;
+  color: var(--muted);
+  white-space: nowrap;
+  font-weight: 500;
+}
+.date-val { color: var(--body); line-height: 1.4; }
+.date-val a { color: var(--accent); }
+.date-val.urgent { color: var(--r); font-weight: 600; }
+
+/* Locations table */
+.loc-list { list-style: none; }
+.loc-item {
+  padding: .45rem 0;
+  border-bottom: 1px solid var(--cream);
+  font-size: .8rem;
+}
+.loc-item:last-child { border-bottom: none; }
+.loc-name {
+  font-weight: 500; color: var(--body);
+  margin-bottom: .1rem;
+}
+.loc-addr { color: var(--muted); font-size: .75rem; }
+.loc-hours {
+  font-family: 'DM Mono', monospace;
+  font-size: .62rem; letter-spacing: .06em;
+  color: var(--accent); margin-top: .15rem;
+  font-weight: 500;
+}
+.loc-note {
+  font-size: .7rem; color: var(--muted);
+  font-style: italic; margin-top: .2rem;
+}
+
+/* ── PARTY HEADERS ── */
+.ph {
+  margin: 2rem 0 0;
+  padding: .7rem 1.25rem;
+  display: flex; align-items: center; gap: .75rem;
+}
+.ph.r { background: var(--r); color: white; }
+.ph.d { background: var(--d); color: white; }
+.ph h2 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: .95rem; font-weight: 700;
+  letter-spacing: .06em; text-transform: uppercase;
+}
+
+/* ── RACE CARD ── */
+.card { border: 1px solid var(--rule); border-top: none; background: white; }
+.card + .card { border-top: 2px dashed var(--rule); }
+
+.rh {
+  padding: 1.1rem 1.5rem .7rem;
+  border-bottom: 1px solid var(--cream);
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 1rem; align-items: start;
+}
+.rt {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.15rem; font-weight: 700; color: var(--ink);
+}
+.rl {
+  font-size: .62rem; text-transform: uppercase;
+  letter-spacing: .18em; color: var(--muted); margin-top: .15rem;
+}
+.ol {
+  font-size: .68rem; text-transform: uppercase;
+  letter-spacing: .1em; color: var(--muted);
+  text-decoration: none;
+  border: 1px solid var(--rule);
+  padding: .22rem .55rem; border-radius: 2px;
+  white-space: nowrap; flex-shrink: 0;
+}
+.ol:hover { background: var(--ink); color: white; border-color: var(--ink); }
+
+/* Office explainer */
+.oe {
+  padding: .85rem 1.5rem;
+  background: var(--cream);
+  border-bottom: 1px solid var(--rule);
+  font-size: .83rem; font-style: italic; line-height: 1.6;
+  font-family: 'DM Sans', sans-serif;
+}
+.oe strong {
+  font-style: normal; font-weight: 600; color: var(--ink);
+  display: block; margin-bottom: .2rem;
+  font-size: .7rem; letter-spacing: .1em; text-transform: uppercase;
+  font-family: 'DM Mono', monospace;
+}
+
+/* November outcome banner */
+.nov-banner {
+  background: #f0f5f1;
+  border-bottom: 1px solid #c3d9cc;
+  padding: .45rem 1.5rem;
+  font-size: .75rem;
+  color: var(--accent);
+  display: flex; align-items: center; gap: .5rem;
+}
+.nov-banner strong { font-weight: 600; }
+.nov-dot {
+  width: 7px; height: 7px; border-radius: 50%;
+  background: var(--accent); flex-shrink: 0;
+}
+
+/* Candidates */
+.cg { display: grid; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); }
+.cand { padding: 1.1rem 1.5rem; border-right: 1px solid var(--cream); }
+.cand:last-child { border-right: none; }
+.cn {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1rem; font-weight: 700; color: var(--ink);
+  margin-bottom: .15rem;
+  display: flex; align-items: center; gap: .5rem; flex-wrap: wrap;
+}
+.cn a { color: inherit; text-decoration: none; border-bottom: 1.5px solid var(--rule); }
+.cn a:hover { border-color: var(--ink); }
+.bi {
+  font-size: .58rem; text-transform: uppercase;
+  letter-spacing: .12em; background: var(--tag);
+  color: var(--muted); border: 1px solid var(--rule);
+  padding: .08rem .38rem; border-radius: 2px; font-weight: 600;
+  font-family: 'DM Mono', monospace;
+}
+.sl {
+  font-size: .62rem; text-transform: uppercase;
+  letter-spacing: .18em; color: var(--muted);
+  font-weight: 600; margin: .75rem 0 .28rem;
+  display: flex; align-items: center; gap: .4rem;
+  font-family: 'DM Mono', monospace;
+}
+.sl::after { content: ''; flex: 1; height: 1px; background: var(--rule); opacity: .5; }
+.cand p { font-size: .82rem; line-height: 1.6; }
+
+/* ── SPECTRUM SECTION ── */
+.sp-sec {
+  background: #f5f2ec;
+  border-top: 2px solid var(--rule);
+  padding: 1.2rem 1.5rem 1.5rem;
+}
+.sp-title {
+  font-family: 'DM Mono', monospace;
+  font-size: .6rem; text-transform: uppercase;
+  letter-spacing: .2em; color: var(--muted);
+  font-weight: 500; margin-bottom: 1.1rem;
+  line-height: 1.5;
+}
+.sp-wrap { margin-bottom: 1.7rem; }
+.sp-wrap:last-of-type { margin-bottom: 0; }
+.sp-q { font-size: .83rem; font-weight: 600; color: var(--ink); margin-bottom: .28rem; }
+.sp-poles { display: flex; justify-content: space-between; margin-bottom: .32rem; gap: .5rem; }
+.sp-pole { font-size: .65rem; color: var(--muted); text-transform: uppercase; letter-spacing: .06em; max-width: 44%; line-height: 1.3; font-family: 'DM Sans', sans-serif; }
+.sp-pole.right { text-align: right; }
+
+.track { position: relative; height: 12px; border-radius: 6px; margin-bottom: .5rem; }
+.cbadge {
+  position: absolute; top: 50%; transform: translate(-50%,-50%);
+  width: 38px; height: 38px; border-radius: 50%;
+  border: 3px solid white; box-shadow: 0 2px 8px rgba(0,0,0,.25);
+  display: flex; align-items: center; justify-content: center;
+  font-size: .65rem; font-weight: 800; color: white;
+  letter-spacing: .04em; font-family: 'DM Mono', monospace;
+  z-index: 4; line-height: 1; text-align: center;
+}
+.sp-note {
+  font-size: .68rem; color: var(--muted);
+  font-style: italic; line-height: 1.55; margin-top: .3rem;
+}
+
+/* Legend */
+.leg {
+  display: flex; gap: 1.1rem; flex-wrap: wrap;
+  margin-top: 1rem; padding-top: .85rem;
+  border-top: 1px dashed var(--rule);
+  font-size: .68rem; color: var(--muted); align-items: center;
+}
+.li { display: flex; align-items: center; gap: .38rem; }
+.lb {
+  width: 26px; height: 26px; border-radius: 50%;
+  border: 2px solid white; box-shadow: 0 1px 4px rgba(0,0,0,.18);
+  display: flex; align-items: center; justify-content: center;
+  font-size: .58rem; font-weight: 800; color: white;
+  letter-spacing: .03em; flex-shrink: 0;
+  font-family: 'DM Mono', monospace;
+}
+.lk { font-size: .62rem; margin-left: auto; text-align: right; line-height: 1.4; }
+
+/* ── VERIFY SOURCES SECTION ── */
+.verify-section {
+  background: var(--ink);
+  color: white;
+  padding: 2.5rem 1.5rem;
+  margin-top: 2rem;
+}
+.verify-inner { max-width: 900px; margin: 0 auto; }
+.verify-eyebrow {
+  font-family: 'DM Mono', monospace;
+  font-size: .6rem; letter-spacing: .22em;
+  text-transform: uppercase; color: #52c97e;
+  font-weight: 500; margin-bottom: .6rem;
+}
+.verify-headline {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.4rem; font-weight: 700;
+  color: white; margin-bottom: .4rem; letter-spacing: -.01em;
+}
+.verify-sub {
+  font-size: .8rem; color: #a09a8e;
+  line-height: 1.6; max-width: 560px; margin-bottom: 1.5rem;
+}
+.sources-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1px;
+  background: #2a2720;
+  border: 1px solid #2a2720;
+  border-radius: 4px;
+  overflow: hidden;
+}
+.source-card {
+  background: #1a1812;
+  padding: 1rem 1.1rem;
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  transition: background .15s;
+}
+.source-card:hover { background: #222018; }
+.source-name {
+  font-size: .82rem; font-weight: 500;
+  color: var(--paper); margin-bottom: .2rem;
+}
+.source-what { font-size: .73rem; color: #a09a8e; line-height: 1.5; }
+.source-scope {
+  display: inline-block; margin-top: .4rem;
+  font-family: 'DM Mono', monospace;
+  font-size: .55rem; letter-spacing: .1em;
+  text-transform: uppercase; color: #52c97e;
+  border: 1px solid #2a5a3a; padding: .08rem .32rem; border-radius: 2px;
+}
+
+/* ── FOOTER ── */
+.foot {
+  background: var(--ink); color: #a09a8e;
+  padding: 2rem 1.5rem;
+  font-size: .75rem; line-height: 1.8;
+  border-top: 1px solid #2a2720;
+}
+.foot-inner {
+  max-width: 900px; margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 2rem; align-items: start;
+}
+.foot-logo {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 900; font-size: 1.1rem;
+  color: var(--paper); letter-spacing: -.02em;
+  margin-bottom: .25rem;
+}
+.foot-logo span { color: #52c97e; }
+.foot-tagline {
+  font-family: 'DM Mono', monospace;
+  font-size: .58rem; letter-spacing: .14em;
+  text-transform: uppercase; color: #605a50;
+  margin-bottom: .9rem;
+}
+.foot-links { display: flex; gap: 1.2rem; flex-wrap: wrap; font-size: .73rem; }
+.foot-links a { color: #a09a8e; text-decoration: none; }
+.foot-links a:hover { color: var(--paper); }
+.foot-right { text-align: right; font-size: .7rem; }
+.foot-disc {
+  margin-top: 1.5rem; padding-top: 1.5rem;
+  border-top: 1px solid #2a2720;
+  font-size: .68rem; color: #605a50;
+  max-width: 900px; margin-left: auto; margin-right: auto;
+}
+
+@media(max-width:600px){
+  .info-grid { grid-template-columns: 1fr; }
+  .rh { grid-template-columns: 1fr; }
+  .cg { grid-template-columns: 1fr; }
+  .cand { border-right: none; border-bottom: 1px solid var(--cream); }
+  .cand:last-child { border-bottom: none; }
+  .foot-inner { grid-template-columns: 1fr; }
+  .foot-right { text-align: left; }
+  .lk { display: none; }
+  .header-tagline { display: none; }
+  .runoff-explainer-inner { grid-template-columns: 1fr; }
+  .runoff-icon { display: none; }
+}
+
+
+/* ═══════════════════════════════════════
+   PRINT STYLES
+   Spectrums → compact score table
+   Colors → monochrome
+   Navigation, sources section → hidden
+═══════════════════════════════════════ */
+@media print {
+
+  * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+
+  body {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 10pt;
+    color: #000;
+    background: white;
+    line-height: 1.5;
+  }
+
+  /* Hide non-essential screen elements */
+  .site-header .header-tagline,
+  .notice-bar,
+  .verify-section,
+  .foot,
+  .ol,
+  .sp-sec { display: none !important; }
+
+  /* Show print-only elements */
+  .print-only { display: block !important; }
+  .print-scores { display: table !important; }
+
+  /* Site header — simplified */
+  .site-header {
+    background: white !important;
+    border-bottom: 2pt solid black;
+    padding: .4rem 0;
+    position: static;
+  }
+  .logo-word { color: black !important; font-size: 14pt; }
+  .logo-word span { color: black !important; }
+  .logo-badge { display: none; }
+
+  /* Page title */
+  .mast-print {
+    display: block !important;
+    text-align: center;
+    padding: .5rem 0;
+    border-bottom: 1pt solid #ccc;
+    margin-bottom: .5rem;
+  }
+  .mast-print h1 {
+    font-size: 14pt; font-weight: bold; margin-bottom: .15rem;
+  }
+  .mast-print p { font-size: 9pt; color: #444; }
+
+  /* Runoff explainer — keep but shrink */
+  .runoff-explainer {
+    background: #f0f0f0 !important;
+    color: black !important;
+    padding: .5rem .75rem;
+    margin-bottom: .5rem;
+    border: 1pt solid #ccc;
+  }
+  .runoff-explainer h2 { color: black !important; font-size: 10pt; }
+  .runoff-explainer p { color: #333 !important; font-size: 9pt; }
+
+  /* Info grid */
+  .info-grid { grid-template-columns: 1fr 1fr; gap: .5rem; margin-top: .5rem; }
+  .info-box-head { background: #222 !important; padding: .3rem .6rem; font-size: 7pt; }
+  .info-box-body { padding: .5rem .6rem; }
+  .dates-list li, .loc-item { font-size: 8.5pt; padding: .2rem 0; }
+  .loc-hours { color: #000 !important; }
+
+  /* Party headers */
+  .ph {
+    padding: .4rem .75rem;
+    margin-top: 1rem;
+    page-break-before: auto;
+  }
+  .ph.r { background: #111 !important; }
+  .ph.d { background: #333 !important; }
+  .ph h2 { font-size: 9pt; }
+
+  /* Race cards */
+  .card { border: 1pt solid #bbb; break-inside: avoid; margin-bottom: .4rem; }
+  .card + .card { border-top: 1pt dashed #bbb; }
+  .rh { padding: .5rem .75rem .3rem; }
+  .rt { font-size: 11pt; }
+  .rl { font-size: 7pt; }
+  .oe { padding: .4rem .75rem; font-size: 8.5pt; background: #f8f8f8 !important; }
+  .oe strong { font-size: 7pt; }
+  .nov-banner { padding: .3rem .75rem; font-size: 8pt; background: #eef5ee !important; }
+  .cand { padding: .6rem .75rem; break-inside: avoid; }
+  .cn { font-size: 10pt; }
+  .sl { font-size: 6.5pt; margin: .5rem 0 .2rem; }
+  .cand p { font-size: 8.5pt; }
+
+  /* Print score table — replaces spectrum charts */
+  .print-scores {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 8pt;
+    margin: .4rem 0;
+    border: 1pt solid #bbb;
+  }
+  .print-scores th {
+    background: #eee !important;
+    font-weight: bold;
+    padding: .25rem .5rem;
+    text-align: left;
+    border-bottom: 1pt solid #bbb;
+    font-family: Georgia, serif;
+    font-size: 7.5pt;
+  }
+  .print-scores td {
+    padding: .22rem .5rem;
+    border-bottom: 1pt solid #eee;
+    vertical-align: top;
+    line-height: 1.4;
+  }
+  .print-scores tr:last-child td { border-bottom: none; }
+  .score-label { font-weight: bold; color: #000; }
+  .score-source { color: #555; font-style: italic; font-size: 7.5pt; }
+  .print-scores-title {
+    font-size: 7.5pt;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: .08em;
+    color: #444;
+    margin: .4rem 0 .15rem;
+    font-family: Georgia, serif;
+  }
+
+  /* Footer for print */
+  .print-foot {
+    display: block !important;
+    margin-top: 1rem;
+    padding-top: .5rem;
+    border-top: 1pt solid #ccc;
+    font-size: 7.5pt;
+    color: #555;
+  }
+
+  @page {
+    margin: 0.65in 0.6in;
+    size: letter;
+  }
+}
+
+/* Hide print-only elements on screen */
+.print-only, .print-scores, .mast-print, .print-foot { display: none; }
+
+</style>
+</head>
+<body>
+
+<!-- SITE HEADER -->
+<header class="site-header">
+  <a class="logo" href="index.html">
+    <span class="logo-word">Clear<span>Ballot</span></span>
+    <span class="logo-badge">Beta · Texas</span>
+  </a>
+  <div class="header-tagline">Your record. Their record. You decide.</div>
+</header>
+
+<!-- PRINT MASTHEAD (screen: hidden) -->
+<div class="mast-print print-only">
+  <h1>ClearBallot — May 26, 2026 Primary Runoff Election Guide</h1>
+  <p>Rockwall County, Texas · Nonpartisan · Verified · clearballot.org</p>
+</div>
+
+<!-- RUNOFF EXPLAINER -->
+<div class="runoff-explainer">
+  <div class="runoff-explainer-inner">
+    <div class="runoff-icon">🗳</div>
+    <div>
+      <h2>Why am I voting again? What is a Primary Runoff?</h2>
+      <p>Texas holds its regular primary elections in March. If no candidate in a race receives more than 50% of the vote, the top two finishers advance to a <strong>Primary Runoff</strong> — a second election to produce a clear majority winner. That's this election. The winner of each party's runoff will appear on the November general election ballot as that party's official nominee. <strong>You vote in the same party's runoff as the primary you participated in.</strong> If you didn't vote in March, you can participate in either party's runoff — but not both.</p>
+    </div>
+  </div>
+</div>
+
+<!-- NOTICE BAR -->
+<div class="notice-bar">
+  <div class="notice-bar-inner">
+    <strong>Reading the charts:</strong> Every spectrum runs Left (liberal) → Right (conservative). Candidate initials mark their position.
+    <span class="src-v">📊 Voting Record</span> = nonpartisan scorecard data from any office held &nbsp;·&nbsp;
+    <span class="src-s">🗣 Stated</span> = campaign statements only &nbsp;·&nbsp;
+    <span class="src-m">⚠ Background</span> = objective qualification comparison, not ideological.
+  </div>
+</div>
+
+<!-- VOTING INFO -->
+<div class="wrap">
+  <div class="info-grid">
+
+    <!-- Key Dates -->
+    <div class="info-box">
+      <div class="info-box-head">Key Dates — May 26, 2026 Primary Runoff</div>
+      <div class="info-box-body">
+        <ul class="dates-list">
+          <li><span class="date-label">Register</span><span class="date-val urgent">Apr 27 — TODAY is the deadline</span></li>
+          <li><span class="date-label">Mail Ballot Apply</span><span class="date-val">By May 15, 2026</span></li>
+          <li><span class="date-label">Early Voting</span><span class="date-val">May 18–22 · 7 am–7 pm daily</span></li>
+          <li><span class="date-label">Election Day</span><span class="date-val">May 26, 2026 · 7 am–7 pm</span></li>
+          <li><span class="date-label">Mail Ballot Received</span><span class="date-val">By May 26, 2026</span></li>
+          <li><span class="date-label">Sample Ballots</span><span class="date-val"><a href="https://www.rockwallvotes.com/wp-content/uploads/2026/04/Republican-Sample-Ballot-05.26.2026.pdf" target="_blank">Republican ↗</a> · <a href="https://www.rockwallvotes.com/wp-content/uploads/2026/04/Democratic-Sample-Ballot-05.26.2026.pdf" target="_blank">Democratic ↗</a></span></li>
+          <li><span class="date-label">Elections Office</span><span class="date-val"><a href="https://www.rockwallvotes.com" target="_blank">rockwallvotes.com</a> · (972) 204-6200</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Voting Locations -->
+    <div class="info-box">
+      <div class="info-box-head">Voting Locations — Rockwall County</div>
+      <div class="info-box-body">
+        <ul class="loc-list">
+          <li class="loc-item">
+            <div class="loc-name">🏛 Rockwall County Courthouse Annex <span style="font-size:.65rem;color:var(--accent);font-weight:600;">MAIN</span></div>
+            <div class="loc-addr">1101 E. Yellowjacket Ln., Suite 160 · Rockwall, TX 75087</div>
+            <div class="loc-hours">Early Voting May 18–22 · Election Day May 26 · 7 am–7 pm</div>
+          </li>
+          <li class="loc-item">
+            <div class="loc-name">🏙 Fate City Hall</div>
+            <div class="loc-addr">1900 CD Boren Pkwy · Fate, TX 75087 · Conference Room</div>
+            <div class="loc-hours">Early Voting May 18–22 · Election Day May 26 · 7 am–7 pm</div>
+          </li>
+          <li class="loc-item">
+            <div class="loc-name">🏙 Heath City Hall</div>
+            <div class="loc-addr">200 Laurence Dr. · Heath, TX 75032 · Community Room</div>
+            <div class="loc-hours">Early Voting May 18–22 · Election Day May 26 · 7 am–7 pm</div>
+          </li>
+          <li class="loc-item">
+            <div class="loc-note">✅ Rockwall County uses countywide voting — you may vote at <strong>any</strong> location above, regardless of your precinct. Source: <a href="https://www.rockwallvotes.com/wp-content/uploads/2026/04/EV-Schedule-05.26.2026-1.pdf" target="_blank">Official Rockwall County Elections Schedule ↗</a></div>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+  </div><!-- /info-grid -->
+</div><!-- /wrap -->
+
+
+<!-- ===================== REPUBLICAN ===================== -->
+<div class="wrap">
+<div class="ph r"><span>🗳</span><h2>Republican Primary Runoff Races</h2></div>
+
+<!-- R1: US SENATE -->
+<div class="card">
+  <div class="rh">
+    <div><div class="rt">United States Senator</div><div class="rl">Federal · 6-year term</div></div>
+    <a class="ol" href="https://www.senate.gov" target="_blank">About This Office ↗</a>
+  </div>
+  <div class="oe">
+    <strong>What Does a U.S. Senator Do?</strong>
+    Texas sends two senators to Washington to represent all Texans. Together with the full 100-member Senate they vote on federal laws, confirm presidential appointments (judges, cabinet members), ratify treaties, and control the federal budget.
+  </div>
+  <div class="nov-banner">
+    <span class="nov-dot"></span>
+    <strong>November General Election:</strong> Winner faces Democratic nominee James Talarico (Texas State Representative, Austin).
+  </div>
+  <div class="cg">
+    <div class="cand">
+      <div class="cn"><a href="https://www.johncornyn.com" target="_blank">John Cornyn</a><span class="bi">Incumbent</span></div>
+      <div class="sl">Qualifications</div>
+      <p>Texas Senator since 2003, currently his fourth term. Previously served as Texas District Court Judge, Texas Supreme Court Justice, and Texas Attorney General (1999–2002). Law degree from St. Mary's University; LL.M. from the University of Virginia. Has served as Senate Majority Whip and Senate Majority Leader.</p>
+      <div class="sl">Career Record &amp; Priorities</div>
+      <p>Heritage Action scores: 35% (118th Congress), 47–84% range across prior congresses — solidly conservative but among the more moderate Senate Republicans by that scorecard. ACU lifetime score ~93%. Co-negotiated and voted for the Bipartisan Safer Communities Act (2022) with Democrats. Voted to provide U.S. military assistance to Ukraine multiple times. Focuses on border security, Texas energy, lower taxes, veterans' benefits, housing supply.</p>
+    </div>
+    <div class="cand">
+      <div class="cn"><a href="https://www.kenpaxton.com" target="_blank">Ken Paxton</a></div>
+      <div class="sl">Qualifications</div>
+      <p>Texas Attorney General since 2015 (three terms). Before that, served ten years in the Texas House of Representatives and two years in the Texas Senate. Law degree from the University of Virginia. As AG, led multi-state lawsuits challenging federal executive actions.</p>
+      <div class="sl">Career Record &amp; Priorities</div>
+      <p>ACU named him a leading conservative during his Texas legislative career (2003–2015). As AG: filed 100+ lawsuits challenging the Biden administration; led multi-state ACA challenge to the Supreme Court. Opposes U.S. military aid to Ukraine. Supports strict immigration enforcement. Prioritizes social conservative policies and reducing federal spending.</p>
+    </div>
+  </div>
+  <!-- Print score table -->
+  <div class="sp-sec">
+    <div class="sp-title">Position Spectrums — U.S. Senate · Left = Liberal → Right = Conservative</div>
+    <div class="sp-wrap">
+      <div class="sp-q">1. Foreign Policy: U.S. Role Abroad</div>
+      <div class="sp-poles">
+        <span class="sp-pole">← Internationalist — active alliances; foreign military aid as national security investment</span>
+        <span class="sp-pole right">America First / Restrained — limit foreign aid; prioritize domestic spending →</span>
+      </div>
+      <div class="track" style="background:linear-gradient(to right,#6b8fbb,#ddd5c0,#8b1a1a);">
+        <div class="cbadge" style="left:38%;background:#c07040;">JC</div>
+        <div class="cbadge" style="left:85%;background:#8b1a1a;">KP</div>
+      </div>
+      <div class="sp-note"><span class="src-v">📊 Voting Record (Cornyn):</span> Voted YES on Ukraine military aid in 2022, 2023, and 2024; one of 22 Senate Republicans to support the $95B package. Introduced the Ukraine Democracy Defense Lend-Lease Act. <span class="src-v">📊 Career Record (Paxton):</span> Publicly opposed each Ukraine aid vote. Texas legislative record (2003–2015) and AG record show consistent America First positions.</div>
+    </div>
+    <div class="sp-wrap">
+      <div class="sp-q">2. Legislative Approach: Bipartisan Negotiation vs. Strict Party Line</div>
+      <div class="sp-poles">
+        <span class="sp-pole">← Bipartisan — negotiate across party lines; work with Democrats to pass legislation</span>
+        <span class="sp-pole right">Strict Party Line — vote with conservative base; oppose all compromise →</span>
+      </div>
+      <div class="track" style="background:linear-gradient(to right,#7aab6e,#ddd5c0,#8b1a1a);">
+        <div class="cbadge" style="left:32%;background:#c07040;">JC</div>
+        <div class="cbadge" style="left:88%;background:#8b1a1a;">KP</div>
+      </div>
+      <div class="sp-note"><span class="src-v">📊 Voting Record (Cornyn — Heritage Action):</span> 35% in the 118th Congress. Co-authored the Bipartisan Safer Communities Act, bipartisan immigration legislation, and the Violence Against Women Act reauthorization. <span class="src-v">📊 Career Record (Paxton):</span> Texas legislative record shows near-zero cross-aisle votes. All AG actions were partisan. ACU: leading conservative throughout career.</div>
+    </div>
+    <div class="sp-wrap">
+      <div class="sp-q">3. Federal Government Size &amp; Spending</div>
+      <div class="sp-poles">
+        <span class="sp-pole">← Active Federal Government — use federal power and spending to address national challenges</span>
+        <span class="sp-pole right">Smaller Federal Government — cut spending; return power to states →</span>
+      </div>
+      <div class="track" style="background:linear-gradient(to right,#7aab6e,#ddd5c0,#8b1a1a);">
+        <div class="cbadge" style="left:68%;background:#c07040;">JC</div>
+        <div class="cbadge" style="left:88%;background:#8b1a1a;">KP</div>
+      </div>
+      <div class="sp-note"><span class="src-v">📊 Voting Record (Cornyn):</span> ACU lifetime ~93%. Voted against ACA in 2009, 2010, and all 2017 repeal attempts. Heritage Action range 35–84% across congresses — solidly conservative overall. <span class="src-v">📊 Career Record (Paxton):</span> Led ACA challenge to the Supreme Court. All AG litigation aimed at reducing federal authority.</div>
+    </div>
+    <div class="leg">
+      <div class="li"><div class="lb" style="background:#c07040;">JC</div>John Cornyn</div>
+      <div class="li"><div class="lb" style="background:#8b1a1a;">KP</div>Ken Paxton</div>
+      <div class="lk">Heritage Action (Cornyn: 35–84% range) · ACU (~93% lifetime) · Documented Senate votes</div>
+    </div>
+  </div>
+  <!-- Print scores -->
+  <div class="print-only" style="padding:.5rem .75rem .75rem;">
+    <div class="print-scores-title">Nonpartisan Voting Record Scores</div>
+    <table class="print-scores">
+      <tr><th>Scorecard</th><th>John Cornyn</th><th>Ken Paxton</th></tr>
+      <tr><td class="score-label">Heritage Action</td><td>35% (118th) · 47–84% range</td><td>No federal score (AG, not Congress)</td></tr>
+      <tr><td class="score-label">ACU Lifetime</td><td>~93%</td><td>Named leading conservative (TX Legislature)</td></tr>
+      <tr><td class="score-label">Key Votes</td><td>YES — Ukraine aid (2022, 2023, 2024); Bipartisan Safer Communities Act (2022)</td><td>Publicly opposed each Ukraine aid vote; 100+ partisan AG lawsuits</td></tr>
+      <tr><td colspan="3" class="score-source">Sources: heritageaction.com/scorecard · acuf.org/ratings · Documented Senate roll-call votes</td></tr>
+    </table>
+  </div>
+</div><!-- /US Senate -->
+
+
+<!-- R2: AG (R) -->
+<div class="card">
+  <div class="rh">
+    <div><div class="rt">Attorney General of Texas</div><div class="rl">Statewide · 4-year term</div></div>
+    <a class="ol" href="https://www.texasattorneygeneral.gov" target="_blank">About This Office ↗</a>
+  </div>
+  <div class="oe">
+    <strong>What Does the Texas Attorney General Do?</strong>
+    The state's chief lawyer. Defends Texas agencies and laws in court, sues on behalf of Texans against fraud and consumer abuse, enforces child support orders, issues formal legal opinions on state law, and can file lawsuits challenging federal regulations. This seat is open because Ken Paxton is running for U.S. Senate.
+  </div>
+  <div class="nov-banner">
+    <span class="nov-dot"></span>
+    <strong>November General Election:</strong> Winner faces the Democratic nominee — either Nathan Johnson or Joe Jaworski (determined by the Democratic runoff on the same ballot).
+  </div>
+  <div class="cg">
+    <div class="cand">
+      <div class="cn"><a href="https://chiproy.com" target="_blank">Chip Roy</a></div>
+      <div class="sl">Qualifications</div>
+      <p>U.S. Representative (TX-21) since 2019. Previously served as Texas's First Assistant Attorney General under Ken Paxton (2014–2016), Chief of Staff to U.S. Senator Ted Cruz, and Senior Advisor to Governor Rick Perry. Law degree from UT Austin. Has argued before the Texas Supreme Court. The only candidate with direct AG office experience.</p>
+      <div class="sl">Career Record &amp; Priorities</div>
+      <p>Heritage Action: 100% current Congress, 98% lifetime — among the highest scores in the entire U.S. House. GovTrack 2024: joined bipartisan bills the 3rd least often of all 435 House members. Co-founded the House Freedom Caucus. Voted against his own Republican leadership multiple times. Pledges to continue the Paxton-era litigation model and authored the SAVE Act (proof of citizenship to vote), passed the U.S. House in 2025.</p>
+    </div>
+    <div class="cand">
+      <div class="cn"><a href="https://mayesmiddleton.com" target="_blank">Mayes Middleton</a></div>
+      <div class="sl">Qualifications</div>
+      <p>Texas State Senator (District 11, Galveston) since 2023; Texas House member 2019–2023 where he led the Texas House Freedom Caucus. Law degree from UT Austin. Career has been primarily running his family's oil and gas company. No courtroom litigation experience on public record.</p>
+      <div class="sl">Career Record &amp; Priorities</div>
+      <p>Club for Growth Texas (2023): 87% — highest-rated Republican in the Texas Senate. Texans for Fiscal Responsibility (2023): 90/A — 2nd highest in the Senate. Texas Tribune 2025 roll-call: 2nd most conservative of 31 Texas senators. Pledges to fight illegal immigration, pursue DA removal authority, and defend against federal overreach.</p>
+    </div>
+  </div>
+  <div class="sp-sec">
+    <div class="sp-title">Position Spectrums — Texas AG (R) · Left = Liberal → Right = Conservative</div>
+    <div class="sp-wrap">
+      <div class="sp-q">1. Overall Ideological Score Across Career</div>
+      <div class="sp-poles">
+        <span class="sp-pole">← Moderate Conservative — pragmatic; occasionally works across lines</span>
+        <span class="sp-pole right">Hard-Line Conservative — near-perfect conservative scoring →</span>
+      </div>
+      <div class="track" style="background:linear-gradient(to right,#d4b8a0,#ddd5c0,#7a1a1a);">
+        <div class="cbadge" style="left:82%;background:#5a1010;">MM</div>
+        <div class="cbadge" style="left:94%;background:#8b1a1a;">CR</div>
+      </div>
+      <div class="sp-note"><span class="src-v">📊 Voting Record (Roy — U.S. House):</span> Heritage Action 100% current, 98% lifetime. GovTrack: 3rd least bipartisan of all 435 House members. Voted against own party leadership repeatedly. <span class="src-v">📊 Voting Record (Middleton — TX Legislature):</span> Club for Growth Texas 87%. TFR 90/A. TX Tribune roll-call: 2nd most conservative of 31 senators. Note: State-level scores are not equivalent to Roy's federal Heritage Action scores — Roy is measurably further right by comparable data.</div>
+    </div>
+    <div class="sp-wrap">
+      <div class="sp-q">2. Role of the AG: Neutral Legal Officer vs. Policy Advocate</div>
+      <div class="sp-poles">
+        <span class="sp-pole">← Neutral Enforcer — defend all laws impartially</span>
+        <span class="sp-pole right">Policy Advocate — use office aggressively to advance political agenda →</span>
+      </div>
+      <div class="track" style="background:linear-gradient(to right,#7aab6e,#ddd5c0,#8b1a1a);">
+        <div class="cbadge" style="left:80%;background:#8b1a1a;">CR</div>
+        <div class="cbadge" style="left:91%;background:#5a1010;">MM</div>
+      </div>
+      <div class="sp-note"><span class="src-v">📊 Career Record + 🗣 Stated (both):</span> Both pledged to continue the Paxton litigation model. Middleton additionally pledged DA removal authority — a more aggressive use of the office — placing him marginally further right on this dimension.</div>
+    </div>
+    <div class="sp-wrap">
+      <div class="sp-q">3. Legal Qualifications for This Role <em style="font-weight:400;">(Objective — Not Ideological)</em></div>
+      <div class="sp-poles">
+        <span class="sp-pole">← No Courtroom / AG Office Experience</span>
+        <span class="sp-pole right">Direct Litigation + AG Office Experience →</span>
+      </div>
+      <div class="track" style="background:linear-gradient(to right,#ddd5c0,#9a8a6a);">
+        <div class="cbadge" style="left:10%;background:#5a1010;">MM</div>
+        <div class="cbadge" style="left:84%;background:#8b1a1a;">CR</div>
+      </div>
+      <div class="sp-note"><span class="src-m">⚠ Background:</span> Middleton holds a law degree but his career has been oil and gas management. Roy served as First Assistant AG (2014–2016) and argued before the Texas Supreme Court. Middleton has stated that ideological record — not courtroom credentials — is the more relevant qualification.</div>
+    </div>
+    <div class="leg">
+      <div class="li"><div class="lb" style="background:#8b1a1a;">CR</div>Chip Roy</div>
+      <div class="li"><div class="lb" style="background:#5a1010;">MM</div>Mayes Middleton</div>
+      <div class="lk">Heritage Action (Roy: 98% lifetime) · Club for Growth TX (Middleton: 87%) · TFR · GovTrack</div>
+    </div>
+  </div>
+  <div class="print-only" style="padding:.5rem .75rem .75rem;">
+    <div class="print-scores-title">Nonpartisan Voting Record Scores</div>
+    <table class="print-scores">
+      <tr><th>Scorecard</th><th>Chip Roy</th><th>Mayes Middleton</th></tr>
+      <tr><td class="score-label">Heritage Action</td><td>100% current · 98% lifetime (U.S. House)</td><td>No federal score (TX Legislature)</td></tr>
+      <tr><td class="score-label">Club for Growth</td><td>Consistently top-rated (federal)</td><td>87% — highest TX Senate Republican (2023)</td></tr>
+      <tr><td class="score-label">TFR (Texas)</td><td>N/A (federal office)</td><td>90/A — 2nd highest TX Senate (2023)</td></tr>
+      <tr><td class="score-label">GovTrack</td><td>3rd least bipartisan of 435 House members</td><td>N/A</td></tr>
+      <tr><td colspan="3" class="score-source">Sources: heritageaction.com · clubforgrowthfoundation.org · texastaxpayers.com · govtrack.us</td></tr>
+    </table>
+  </div>
+</div><!-- /AG R -->
+
+
+<!-- R3: RAILROAD COMMISSIONER -->
+<div class="card">
+  <div class="rh">
+    <div><div class="rt">Texas Railroad Commissioner</div><div class="rl">Statewide · 6-year term</div></div>
+    <a class="ol" href="https://www.rrc.texas.gov/about-us/commissioners/" target="_blank">About This Office ↗</a>
+  </div>
+  <div class="oe">
+    <strong>What Does the Texas Railroad Commissioner Do?</strong>
+    Despite the name, this office hasn't regulated railroads since 2005. The three-member Texas Railroad Commission regulates oil and gas production, natural gas pipelines and utilities, pipeline safety, coal and uranium mining, and management of abandoned oil wells. Texas produces more oil than all other states combined — one of the most economically powerful state regulatory positions in the country.
+  </div>
+  <div class="nov-banner">
+    <span class="nov-dot"></span>
+    <strong>November General Election:</strong> Winner faces Democrat Jon Rosenthal (Texas State Representative, Houston).
+  </div>
+  <div class="cg">
+    <div class="cand">
+      <div class="cn"><a href="https://www.jimwrightfortexas.com" target="_blank">Jim Wright</a><span class="bi">Incumbent</span></div>
+      <div class="sl">Qualifications</div>
+      <p>Railroad Commissioner since January 2021. Before politics, owned and operated oilfield waste management companies in South Texas — direct industry experience in the sector he now regulates. Endorsed by Governor Greg Abbott.</p>
+      <div class="sl">Commission Record &amp; Priorities</div>
+      <p>Passed the first overhaul of oilfield waste (produced water) rules in 40 years — a documented commission vote supported by landowner groups, opposed by some major oil companies who filed suit. Oversaw commission's new authority over hydrogen storage and CO₂ injection. Advocates converting produced water into a drought solution for Texas communities.</p>
+    </div>
+    <div class="cand">
+      <div class="cn"><a href="https://bofrenchfortexas.com" target="_blank">Bo French</a></div>
+      <div class="sl">Qualifications</div>
+      <p>Former Chairman of the Tarrant County Republican Party (resigned Nov. 2025 to run). His family owns French Oil Company, a Midland-based oil business. No engineering credential, law degree, or direct regulatory experience. Background is political party organizing and family oil operations.</p>
+      <div class="sl">Stated Priorities</div>
+      <p>Eliminate "radical climate ideology" at the commission; roll back environmental regulations; restrict foreign investment in Texas energy assets; eliminate DEI programs within the agency. <em>Note: Multiple opponents and energy experts noted several of these priorities fall outside the Railroad Commission's statutory authority.</em></p>
+    </div>
+  </div>
+  <div class="sp-sec">
+    <div class="sp-title">Position Spectrums — Railroad Commissioner · Left = Liberal → Right = Conservative
+      <br>⚠ No independent legislative scorecards exist for Railroad Commissioners. All placements are based on documented commission actions (Wright) or campaign statements (French).</div>
+    <div class="sp-wrap">
+      <div class="sp-q">1. Regulatory Philosophy: Strengthen Oversight vs. Deregulate</div>
+      <div class="sp-poles">
+        <span class="sp-pole">← Strengthen Oversight — update rules; protect landowners; enforce standards</span>
+        <span class="sp-pole right">Deregulate — fewer rules; roll back environmental regulations →</span>
+      </div>
+      <div class="track" style="background:linear-gradient(to right,#7aab6e,#ddd5c0,#8b1a1a);">
+        <div class="cbadge" style="left:40%;background:#c07040;">JW</div>
+        <div class="cbadge" style="left:85%;background:#8b1a1a;">BF</div>
+      </div>
+      <div class="sp-note"><span class="src-v">📊 Commission Record (Wright):</span> Passed oilfield waste rule update — documented commission vote. Landowner groups supported; some oil companies filed suit to block it. <span class="src-s">🗣 Stated (French):</span> Pledges to roll back environmental regulations. No commission record.</div>
+    </div>
+    <div class="sp-wrap">
+      <div class="sp-q">2. Energy Scope: Fossil Fuels Only vs. Commission's Evolving Role</div>
+      <div class="sp-poles">
+        <span class="sp-pole">← Evolving Role — hydrogen, CO₂ storage, produced water reuse</span>
+        <span class="sp-pole right">Fossil Fuels Exclusively — oppose non-traditional energy involvement →</span>
+      </div>
+      <div class="track" style="background:linear-gradient(to right,#7aab6e,#ddd5c0,#8b1a1a);">
+        <div class="cbadge" style="left:38%;background:#c07040;">JW</div>
+        <div class="cbadge" style="left:88%;background:#8b1a1a;">BF</div>
+      </div>
+      <div class="sp-note"><span class="src-v">📊 Commission Record (Wright):</span> Oversaw new statutory authority over hydrogen storage and CO₂ injection; championed produced water reuse — documented commission positions. <span class="src-s">🗣 Stated (French):</span> Opposes "climate ideology." No commission record.</div>
+    </div>
+    <div class="sp-wrap">
+      <div class="sp-q">3. Industry &amp; Regulatory Expertise <em style="font-weight:400;">(Objective — Not Ideological)</em></div>
+      <div class="sp-poles">
+        <span class="sp-pole">← No Direct Industry or Regulatory Experience</span>
+        <span class="sp-pole right">Direct Oil &amp; Gas Industry + Active Commission Experience →</span>
+      </div>
+      <div class="track" style="background:linear-gradient(to right,#ddd5c0,#9a8a6a);">
+        <div class="cbadge" style="left:10%;background:#8b1a1a;">BF</div>
+        <div class="cbadge" style="left:82%;background:#c07040;">JW</div>
+      </div>
+      <div class="sp-note"><span class="src-m">⚠ Background:</span> Wright owned oilfield waste management companies; four years active commission experience. French's background is family oil company operations (business role, not regulatory) and GOP party chair work.</div>
+    </div>
+    <div class="leg">
+      <div class="li"><div class="lb" style="background:#c07040;">JW</div>Jim Wright</div>
+      <div class="li"><div class="lb" style="background:#8b1a1a;">BF</div>Bo French</div>
+      <div class="lk">Documented RRC commission actions (Wright) · Campaign statements (French) · No legislative scorecards exist for this office</div>
+    </div>
+  </div>
+  <div class="print-only" style="padding:.5rem .75rem .75rem;">
+    <div class="print-scores-title">Record Summary — No Legislative Scorecards Exist for RRC Commissioners</div>
+    <table class="print-scores">
+      <tr><th>Dimension</th><th>Jim Wright</th><th>Bo French</th></tr>
+      <tr><td class="score-label">Regulatory Record</td><td>Passed oilfield waste rule overhaul (documented commission vote, 2023)</td><td>No commission or legislative record</td></tr>
+      <tr><td class="score-label">Energy Scope</td><td>Oversaw new hydrogen/CO₂ authority; supports produced water reuse</td><td>Pledges to roll back environmental regulations (stated)</td></tr>
+      <tr><td class="score-label">Industry Experience</td><td>Owned oilfield waste management companies; 4 years as commissioner</td><td>Family oil company business operations; GOP party chair</td></tr>
+      <tr><td colspan="3" class="score-source">Source: rrc.texas.gov · Campaign statements</td></tr>
+    </table>
+  </div>
+</div><!-- /RRC -->
+
+
+<!-- R4: COURT OF CRIMINAL APPEALS -->
+<div class="card">
+  <div class="rh">
+    <div><div class="rt">Judge, Texas Court of Criminal Appeals — Place 3</div><div class="rl">Statewide Judicial · 6-year term</div></div>
+    <a class="ol" href="https://www.txcourts.gov/cca/" target="_blank">About This Office ↗</a>
+  </div>
+  <div class="oe">
+    <strong>What Does the Texas Court of Criminal Appeals Do?</strong>
+    Texas's highest court for all criminal matters — the final word on every criminal appeal, including all death penalty cases. The nine elected judges set binding precedent for every criminal court in Texas, determining rules of evidence, sentencing validity, and the rights of defendants and crime victims statewide. This seat is open because Judge Bert Richardson retired.
+  </div>
+  <div class="nov-banner">
+    <span class="nov-dot"></span>
+    <strong>November General Election:</strong> Winner faces Democrat Okey Anyiam (criminal defense attorney).
+  </div>
+  <div class="cg">
+    <div class="cand">
+      <div class="cn"><a href="https://alisonfoxfortexas.com" target="_blank">Alison Fox</a></div>
+      <div class="sl">Qualifications</div>
+      <p>B.A. from UT Austin; law degree from St. Mary's University. Worked as a prosecutor in the Bexar County DA's Office, leading the Ethical Disclosure Unit and the Conviction Integrity Unit — which reviews potentially wrongful convictions. Currently a staff attorney at the Texas Court of Criminal Appeals itself. Finished first in the primary with ~31.3%.</p>
+      <div class="sl">Career Record &amp; Priorities</div>
+      <p>Career spans both prosecution and conviction review — documented experience on both sides. Pledges judicial neutrality, consistent application of criminal law, and upholding victims' rights. Endorsed by multiple Texas newspaper editorial boards and Texas Right to Life PAC.</p>
+    </div>
+    <div class="cand">
+      <div class="cn"><a href="https://smithfortexas.com" target="_blank">Thomas Smith</a></div>
+      <div class="sl">Qualifications</div>
+      <p>Assistant Attorney General in the Texas AG's office. Previously worked in Ken Paxton's Texas Senate office. Advanced from a four-candidate primary with ~30.7%. No prior judicial experience on public record.</p>
+      <div class="sl">Career Record &amp; Priorities</div>
+      <p>Entire career in prosecution-side and executive branch roles. Pledges strict constitutional interpretation of criminal law, support for victims' rights, and a tough-on-crime philosophy. Detailed published platform was limited at press time.</p>
+    </div>
+  </div>
+  <div class="sp-sec">
+    <div class="sp-title">Position Spectrums — Court of Criminal Appeals · Left = Liberal → Right = Conservative
+      <br>⚠ Neither candidate has a judicial or legislative voting record. All placements are based on career background. Treat all charts in this race with caution.</div>
+    <div class="sp-wrap">
+      <div class="sp-q">1. Judicial Philosophy: Contextual vs. Strict Textualist / Originalist</div>
+      <div class="sp-poles">
+        <span class="sp-pole">← Contextual — consider circumstances in applying law</span>
+        <span class="sp-pole right">Strict Textualist — apply law exactly as written; minimal discretion →</span>
+      </div>
+      <div class="track" style="background:linear-gradient(to right,#8b7eb8,#ddd5c0,#c0856b);">
+        <div class="cbadge" style="left:65%;background:#c07040;">AF</div>
+        <div class="cbadge" style="left:78%;background:#8b1a1a;">TS</div>
+      </div>
+      <div class="sp-note"><span class="src-m">⚠ Career Background — No Voting Record:</span> Both describe themselves as strict constructionists. Positions are approximate and close. The gap shown is modest and should not be overstated.</div>
+    </div>
+    <div class="sp-wrap">
+      <div class="sp-q">2. Criminal Justice Orientation: Review-Oriented vs. Prosecution-Leaning</div>
+      <div class="sp-poles">
+        <span class="sp-pole">← Review-Oriented — scrutinize convictions; protect procedural rights</span>
+        <span class="sp-pole right">Prosecution-Leaning — favor law enforcement; uphold convictions →</span>
+      </div>
+      <div class="track" style="background:linear-gradient(to right,#6b8fbb,#ddd5c0,#c4705a);">
+        <div class="cbadge" style="left:40%;background:#c07040;">AF</div>
+        <div class="cbadge" style="left:72%;background:#8b1a1a;">TS</div>
+      </div>
+      <div class="sp-note"><span class="src-m">⚠ Career Background:</span> Fox led the Conviction Integrity Unit — documented experience on both sides. Smith's career is entirely prosecution-side. Placements reflect career trajectory only.</div>
+    </div>
+    <div class="sp-wrap">
+      <div class="sp-q">3. Direct CCA Experience <em style="font-weight:400;">(Objective — Not Ideological)</em></div>
+      <div class="sp-poles">
+        <span class="sp-pole">← No Direct Appellate Court Experience</span>
+        <span class="sp-pole right">Direct Experience Inside the CCA →</span>
+      </div>
+      <div class="track" style="background:linear-gradient(to right,#ddd5c0,#9a8a6a);">
+        <div class="cbadge" style="left:18%;background:#8b1a1a;">TS</div>
+        <div class="cbadge" style="left:84%;background:#c07040;">AF</div>
+      </div>
+      <div class="sp-note"><span class="src-m">⚠ Background:</span> Fox currently works as a staff attorney inside the CCA. Smith's background is AG office and legislative staff. Neither has served as a judge.</div>
+    </div>
+    <div class="leg">
+      <div class="li"><div class="lb" style="background:#c07040;">AF</div>Alison Fox</div>
+      <div class="li"><div class="lb" style="background:#8b1a1a;">TS</div>Thomas Smith</div>
+      <div class="lk">All charts: career background only — no judicial or legislative voting record exists for either candidate</div>
+    </div>
+  </div>
+  <div class="print-only" style="padding:.5rem .75rem .75rem;">
+    <div class="print-scores-title">Career Background Summary — No Voting Record Available for Either Candidate</div>
+    <table class="print-scores">
+      <tr><th>Dimension</th><th>Alison Fox</th><th>Thomas Smith</th></tr>
+      <tr><td class="score-label">Judicial Philosophy</td><td>Strict constructionist (stated); conviction integrity background suggests careful review</td><td>Strict constructionist (stated); tough-on-crime emphasis</td></tr>
+      <tr><td class="score-label">Criminal Justice</td><td>Prosecution + Conviction Integrity Unit (both sides of justice system)</td><td>Prosecution-side only (AG's office)</td></tr>
+      <tr><td class="score-label">CCA Experience</td><td>Current staff attorney at the Texas Court of Criminal Appeals</td><td>AG's office and TX legislative staff — no CCA experience</td></tr>
+      <tr><td colspan="3" class="score-source">Note: Neither candidate has a judicial voting record. These comparisons are based on documented career history only.</td></tr>
+    </table>
+  </div>
+</div><!-- /CCA -->
+
+
+<!-- R5: ROCKWALL COUNTY COURT AT LAW NO. 1 -->
+<div class="card">
+  <div class="rh">
+    <div><div class="rt">Judge, Rockwall County Court at Law No. 1 — Unexpired Term</div><div class="rl">Rockwall County Local Judicial</div></div>
+    <a class="ol" href="https://www.rockwallcountytexas.com" target="_blank">About This Office ↗</a>
+  </div>
+  <div class="oe">
+    <strong>What Does Rockwall County Court at Law No. 1 Do?</strong>
+    Your most local judicial race. This judge hears cases that directly touch residents' daily lives: criminal misdemeanors (DUI, assault, theft), civil disputes, family law (child custody, support, divorce), juvenile cases, probate and estate matters, guardianship hearings, and appeals from Justice of the Peace courts.
+  </div>
+  <div class="nov-banner">
+    <span class="nov-dot"></span>
+    <strong>No November General Election for this race:</strong> No Democrat filed. The winner of this Republican primary becomes the judge and takes office immediately.
+  </div>
+  <div class="cg">
+    <div class="cand">
+      <div class="cn"><a href="https://judgemassar.com" target="_blank">Ben Massar</a></div>
+      <div class="sl">Qualifications</div>
+      <p>Licensed attorney since 1994 — 30+ years of experience. Over 1,000 criminal cases and 100+ jury trials. Former Assistant Criminal District Attorney in Galveston County. Currently serving as Rockwall County JP, Precinct 2. President of both the Rockwall County Bar Association and the Lamar County Bar Association.</p>
+      <div class="sl">Career Record &amp; Priorities</div>
+      <p>Extensive criminal trial record on both prosecution and defense sides. Active JP court presiding experience. Pledges fair, experienced, community-grounded judicial leadership. Active in community service: Meals on Wheels, Rockwall Noon Rotary, local food bank.</p>
+    </div>
+    <div class="cand">
+      <div class="cn">Richard Archibald</div>
+      <div class="sl">Qualifications</div>
+      <p>Partner at Horton &amp; Archibald, PC. Focuses exclusively on complex civil litigation in federal and state courts and arbitration — business contracts, real estate, employment law, securities, insurance, and bankruptcy. Volunteers as CASA guardian ad litem, advocating for children in court. First run for elected office.</p>
+      <div class="sl">Career Record &amp; Priorities</div>
+      <p>Entire career in complex civil litigation directly relevant to the civil, family, and probate matters that form a major share of County Court at Law dockets. Pledges fair and impartial application of the law.</p>
+    </div>
+  </div>
+  <div class="sp-sec">
+    <div class="sp-title">Qualification Spectrums — County Court at Law No. 1
+      <br>Judicial candidates do not campaign on ideology. These charts compare documented qualifications for the cases this court actually hears.</div>
+    <div class="sp-wrap">
+      <div class="sp-q">1. Criminal Law Experience — Trials, Prosecution, Defense, JP Bench</div>
+      <div class="sp-poles">
+        <span class="sp-pole">← No Criminal Law Background</span>
+        <span class="sp-pole right">Extensive Criminal Background (prosecution + defense + presiding as JP) →</span>
+      </div>
+      <div class="track" style="background:linear-gradient(to right,#ddd5c0,#9a8a6a);">
+        <div class="cbadge" style="left:8%;background:#555;">RA</div>
+        <div class="cbadge" style="left:90%;background:#2d5a27;">BM</div>
+      </div>
+      <div class="sp-note"><span class="src-m">⚠ Background:</span> Massar: 30 years criminal defense, former DA, current JP — all documented. Archibald's practice is entirely civil/commercial.</div>
+    </div>
+    <div class="sp-wrap">
+      <div class="sp-q">2. Civil &amp; Commercial Litigation Experience — Contracts, Real Estate, Probate</div>
+      <div class="sp-poles">
+        <span class="sp-pole">← Limited Civil Litigation Background</span>
+        <span class="sp-pole right">Extensive Complex Civil Litigation Background →</span>
+      </div>
+      <div class="track" style="background:linear-gradient(to right,#ddd5c0,#9a8a6a);">
+        <div class="cbadge" style="left:35%;background:#2d5a27;">BM</div>
+        <div class="cbadge" style="left:88%;background:#555;">RA</div>
+      </div>
+      <div class="sp-note"><span class="src-m">⚠ Background:</span> Archibald's entire career has been complex civil litigation. Massar's focus has been criminal law with some civil experience.</div>
+    </div>
+    <div class="leg">
+      <div class="li"><div class="lb" style="background:#2d5a27;">BM</div>Ben Massar</div>
+      <div class="li"><div class="lb" style="background:#555;">RA</div>Richard Archibald</div>
+      <div class="lk">All charts: biographical / public record — qualification comparison only, not ideological</div>
+    </div>
+  </div>
+  <div class="print-only" style="padding:.5rem .75rem .75rem;">
+    <div class="print-scores-title">Career Qualification Summary</div>
+    <table class="print-scores">
+      <tr><th>Dimension</th><th>Ben Massar</th><th>Richard Archibald</th></tr>
+      <tr><td class="score-label">Criminal Law</td><td>30+ yrs criminal defense; former DA; current JP, Precinct 2</td><td>No criminal law background — exclusively civil</td></tr>
+      <tr><td class="score-label">Civil / Commercial</td><td>Some civil experience; primary focus is criminal</td><td>Entire career in complex civil litigation (federal + state courts)</td></tr>
+      <tr><td class="score-label">Judicial Experience</td><td>Active JP court — presiding experience</td><td>No judicial experience; first run for office</td></tr>
+      <tr><td colspan="3" class="score-source">Note: Ideological comparison not applicable — judicial office.</td></tr>
+    </table>
+  </div>
+</div><!-- /County Court -->
+</div><!-- /wrap R -->
+
+
+<!-- ===================== DEMOCRATIC ===================== -->
+<div class="wrap">
+<div class="ph d"><span>🗳</span><h2>Democratic Primary Runoff Races</h2></div>
+
+<!-- D1: LT GOVERNOR -->
+<div class="card">
+  <div class="rh">
+    <div><div class="rt">Lieutenant Governor of Texas</div><div class="rl">Statewide · 4-year term</div></div>
+    <a class="ol" href="https://www.ltgov.texas.gov" target="_blank">About This Office ↗</a>
+  </div>
+  <div class="oe">
+    <strong>What Does the Texas Lieutenant Governor Do?</strong>
+    Often described as the most powerful office in Texas state government. The Lt. Gov. presides over the Texas Senate, controls which bills come to the floor for a vote, appoints all Senate committee chairs, and largely sets the legislative agenda. Also serves as governor when the governor is out of state.
+  </div>
+  <div class="nov-banner">
+    <span class="nov-dot"></span>
+    <strong>November General Election:</strong> Winner faces Republican incumbent Dan Patrick (in office since 2015).
+  </div>
+  <div class="cg">
+    <div class="cand">
+      <div class="cn"><a href="https://www.vikkigoodwin.com" target="_blank">Vikki Goodwin</a></div>
+      <div class="sl">Qualifications</div>
+      <p>Four-term Texas State Representative (District 47, SW Travis County), first elected in 2018 when she flipped a 32-year Republican seat. B.B.A. and M.P.A. from UT Austin. Served on House Education, State Affairs, Appropriations, and Insurance committees. Authored Cati's Act (2023) and the Natalia Cox Act (2023).</p>
+      <div class="sl">Career Record &amp; Priorities</div>
+      <p>Freedom Index (TX constitutional limited-government scorecard): 17% (2023). Texans for Fiscal Responsibility: F every session 2019–2023. Voted against school voucher legislation all four sessions. Consistent votes for public school funding, minimum wage increases, childcare funding, and worker protections. Participated in 2025 quorum-bust. Focuses on public school funding, healthcare, housing, water infrastructure.</p>
+    </div>
+    <div class="cand">
+      <div class="cn"><a href="https://marcosveleztx.com" target="_blank">Marcos Vélez</a></div>
+      <div class="sl">Qualifications</div>
+      <p>Houston-area labor leader and United Steelworkers union organizer. No prior elected office or law degree. Frames his background as directly representing working-class Texans through collective bargaining and labor organizing.</p>
+      <div class="sl">Stated Priorities</div>
+      <p>No voting record exists. Campaign centered on wage growth and economic affordability for working families, housing costs, healthcare access, pro-labor legislation, and fighting corporate consolidation.</p>
+    </div>
+  </div>
+  <div class="sp-sec">
+    <div class="sp-title">Position Spectrums — Lt. Governor (D) · Left = Liberal → Right = Conservative</div>
+    <div class="sp-wrap">
+      <div class="sp-q">1. Overall Ideological Score — Full Political Spectrum</div>
+      <div class="sp-poles">
+        <span class="sp-pole">← Progressive / Liberal — strong liberal voting record across all sessions</span>
+        <span class="sp-pole right">Centrist / Moderate — less partisan; willing to cross party lines →</span>
+      </div>
+      <div class="track" style="background:linear-gradient(to right,#1a3a6b,#4a7ab8,#ddd5c0,#7aab6e);">
+        <div class="cbadge" style="left:12%;background:#1a3a6b;">VG</div>
+        <div class="cbadge" style="left:26%;background:#4a7ab8;">MV</div>
+      </div>
+      <div class="sp-note"><span class="src-v">📊 Voting Record (Goodwin — TX House, 4 sessions):</span> Freedom Index 17% (2023) — scored using documented floor votes against limited-government constitutional principles. TFR F every session (2019–2023). Both candidates are in the liberal portion of this spectrum; Goodwin's position is verified by multiple independent scorecards. <span class="src-s">🗣 Stated (Vélez):</span> No voting record. Self-described pro-labor progressive.</div>
+    </div>
+    <div class="sp-wrap">
+      <div class="sp-q">2. Economic Policy: Labor / Government Intervention vs. Market-Oriented</div>
+      <div class="sp-poles">
+        <span class="sp-pole">← Labor / Government-Led — raise wages via legislation; regulate corporations; expand programs</span>
+        <span class="sp-pole right">Market-Oriented — limit government intervention →</span>
+      </div>
+      <div class="track" style="background:linear-gradient(to right,#1a3a6b,#ddd5c0,#7aab6e);">
+        <div class="cbadge" style="left:8%;background:#4a7ab8;">MV</div>
+        <div class="cbadge" style="left:22%;background:#1a3a6b;">VG</div>
+      </div>
+      <div class="sp-note"><span class="src-v">📊 Voting Record (Goodwin):</span> Consistent votes for minimum wage increases, childcare funding, and worker protections — confirmed by floor votes. Also a small business owner; occasional pragmatic flexibility on certain business regulations places her marginally right of Vélez on this dimension. <span class="src-s">🗣 Stated (Vélez):</span> Union organizer; entire campaign built on labor economics. Placement based on stated positions only.</div>
+    </div>
+    <div class="sp-wrap">
+      <div class="sp-q">3. Education: Public Schools Only vs. School Choice / Vouchers</div>
+      <div class="sp-poles">
+        <span class="sp-pole">← Public Schools Only — oppose any public funding to private schools</span>
+        <span class="sp-pole right">School Choice — support some public funding to private / charter schools →</span>
+      </div>
+      <div class="track" style="background:linear-gradient(to right,#1a3a6b,#ddd5c0,#7aab6e);">
+        <div class="cbadge" style="left:8%;background:#1a3a6b;">VG</div>
+        <div class="cbadge" style="left:20%;background:#4a7ab8;">MV</div>
+      </div>
+      <div class="sp-note"><span class="src-v">📊 Voting Record (Goodwin):</span> Voted against school voucher / ESA legislation all four Texas House sessions — documented floor votes. <span class="src-s">🗣 Stated (Vélez):</span> Pledged to oppose vouchers; no legislative record to verify.</div>
+    </div>
+    <div class="leg">
+      <div class="li"><div class="lb" style="background:#1a3a6b;">VG</div>Vikki Goodwin</div>
+      <div class="li"><div class="lb" style="background:#4a7ab8;">MV</div>Marcos Vélez</div>
+      <div class="lk">Freedom Index (Goodwin: 17%) · TFR (F, all sessions 2019–2023) · Documented TX House floor votes</div>
+    </div>
+  </div>
+  <div class="print-only" style="padding:.5rem .75rem .75rem;">
+    <div class="print-scores-title">Nonpartisan Voting Record Scores</div>
+    <table class="print-scores">
+      <tr><th>Scorecard</th><th>Vikki Goodwin</th><th>Marcos Vélez</th></tr>
+      <tr><td class="score-label">Freedom Index (TX)</td><td>17% (2023) — documented floor votes</td><td>No record — no prior office</td></tr>
+      <tr><td class="score-label">TFR Fiscal Index</td><td>F every session (2019–2023)</td><td>No record</td></tr>
+      <tr><td class="score-label">School Vouchers</td><td>Voted NO all four TX House sessions</td><td>Pledged NO (stated, unverified)</td></tr>
+      <tr><td colspan="3" class="score-source">Sources: freedomindex.us · index.texastaxpayers.com · Documented TX House floor votes</td></tr>
+    </table>
+  </div>
+</div><!-- /Lt Gov D -->
+
+
+<!-- D2: AG (D) -->
+<div class="card">
+  <div class="rh">
+    <div><div class="rt">Attorney General of Texas</div><div class="rl">Statewide · 4-year term</div></div>
+    <a class="ol" href="https://www.texasattorneygeneral.gov" target="_blank">About This Office ↗</a>
+  </div>
+  <div class="oe">
+    <strong>What Does the Texas Attorney General Do?</strong>
+    The state's chief lawyer — defending Texas agencies and laws in court, suing on behalf of Texans against fraud and consumer abuse, enforcing child support orders, issuing formal legal opinions on state law, and challenging or defending federal regulations. This seat is open; no Democrat has won statewide in Texas since 1994.
+  </div>
+  <div class="nov-banner">
+    <span class="nov-dot"></span>
+    <strong>November General Election:</strong> Winner faces the Republican nominee — either Chip Roy or Mayes Middleton (determined by the Republican runoff on the same ballot).
+  </div>
+  <div class="cg">
+    <div class="cand">
+      <div class="cn"><a href="https://nathanjohnsonfortexas.com" target="_blank">Nathan Johnson</a></div>
+      <div class="sl">Qualifications</div>
+      <p>Texas State Senator (District 16, Dallas) since 2019, when he flipped a seat held by Republicans for 32 years. B.S. Physics (Univ. of Arizona); J.D. from UT Austin. Practicing commercial litigator at Thompson Coburn LLP. Served on Senate Judiciary and Criminal Jurisprudence Committee. Led the Democratic primary with nearly 48%.</p>
+      <div class="sl">Career Record &amp; Priorities</div>
+      <p>TFR F every session (2019–2023). Club for Growth Texas (2019): scored near the bottom among all Texas senators on economic freedom measures. Voted for a bipartisan campus-protest bill that some progressives opposed — one of few cross-aisle votes in his record. His "centrist" label refers to his position <em>within the Texas Democratic caucus only</em> — on nonpartisan scorecards covering the full spectrum he scores as consistently liberal. Pledges divisions focused on affordability, elections integrity, and public corruption.</p>
+    </div>
+    <div class="cand">
+      <div class="cn"><a href="https://joejaworski.com" target="_blank">Joe Jaworski</a></div>
+      <div class="sl">Qualifications</div>
+      <p>Practicing attorney and former Mayor of Galveston (2020–2022). Law degree; practiced environmental and civil law. Led a major public housing redevelopment in Galveston. Ran for the Democratic AG nomination in 2022. Finished second in the March primary with ~26%.</p>
+      <div class="sl">Career Record &amp; Priorities</div>
+      <p>No Texas legislative record. Galveston mayoral record includes progressive housing and environmental policy. Has described himself as the more progressive candidate. Has stated he would decline to defend Texas laws he personally finds unconstitutional, including the school voucher program and the Ten Commandments classroom display law. Pledges public corruption investigation and voting rights protection.</p>
+    </div>
+  </div>
+  <div class="sp-sec">
+    <div class="sp-title">Position Spectrums — AG (D) · Left = Liberal → Right = Conservative</div>
+    <div class="sp-wrap">
+      <div class="sp-q">1. Overall Ideological Score — Full Political Spectrum</div>
+      <div class="sp-poles">
+        <span class="sp-pole">← Progressive / Liberal — strong liberal voting record</span>
+        <span class="sp-pole right">Centrist Democrat — moderate; near Democratic median; occasional bipartisan votes →</span>
+      </div>
+      <div class="track" style="background:linear-gradient(to right,#1a3a6b,#4a7ab8,#ddd5c0,#7aab6e);">
+        <div class="cbadge" style="left:18%;background:#4a7ab8;">JJ</div>
+        <div class="cbadge" style="left:32%;background:#1a3a6b;">NJ</div>
+      </div>
+      <div class="sp-note"><span class="src-v">📊 Voting Record (Johnson — TX Senate):</span> TFR F every session — confirmed by floor votes. Club for Growth Texas 2019: near the bottom among all Texas senators. His "centrist" label applies only within the Democratic caucus — on the full spectrum he scores as consistently liberal. One documented bipartisan vote (campus protest bill) distinguishes him marginally. <span class="src-s">🗣 Stated (Jaworski):</span> No TX legislative record. Described himself as the more progressive candidate. Placement approximate.</div>
+    </div>
+    <div class="sp-wrap">
+      <div class="sp-q">2. Role of the AG: Reform Activist vs. Neutral Professional Enforcer</div>
+      <div class="sp-poles">
+        <span class="sp-pole">← Reform Activist — use office to drive policy; selectively decline to defend laws</span>
+        <span class="sp-pole right">Neutral Enforcer — defend all laws as written; serve all Texans regardless of party →</span>
+      </div>
+      <div class="track" style="background:linear-gradient(to right,#1a3a6b,#ddd5c0,#7aab6e);">
+        <div class="cbadge" style="left:20%;background:#4a7ab8;">JJ</div>
+        <div class="cbadge" style="left:45%;background:#1a3a6b;">NJ</div>
+      </div>
+      <div class="sp-note"><span class="src-s">🗣 Stated (both):</span> Johnson pledged to serve all Texans and fight federal overreach from either party — a more neutral posture. Jaworski explicitly stated he would decline to defend certain Texas laws he finds unconstitutional — a more activist posture. Placements based entirely on stated positions.</div>
+    </div>
+    <div class="sp-wrap">
+      <div class="sp-q">3. Background: Executive / Courtroom vs. Legislative / Policy <em style="font-weight:400;">(Objective — Not Ideological)</em></div>
+      <div class="sp-poles">
+        <span class="sp-pole">← Direct Litigation + Executive Leadership</span>
+        <span class="sp-pole right">Legislative / Policy Background — strong lawmaking; less executive leadership →</span>
+      </div>
+      <div class="track" style="background:linear-gradient(to right,#ddd5c0,#9a8a6a);">
+        <div class="cbadge" style="left:30%;background:#4a7ab8;">JJ</div>
+        <div class="cbadge" style="left:60%;background:#1a3a6b;">NJ</div>
+      </div>
+      <div class="sp-note"><span class="src-m">⚠ Background:</span> Both are practicing attorneys. Jaworski brings a mayor's executive leadership plus civil/environmental law practice. Johnson brings eight years as a state senator plus active commercial litigation practice. Neither has served in an AG's office. Objective qualification comparison only.</div>
+    </div>
+    <div class="leg">
+      <div class="li"><div class="lb" style="background:#1a3a6b;">NJ</div>Nathan Johnson</div>
+      <div class="li"><div class="lb" style="background:#4a7ab8;">JJ</div>Joe Jaworski</div>
+      <div class="lk">TFR (Johnson: F all sessions) · Club for Growth TX 2019 · Documented TX Senate floor votes</div>
+    </div>
+  </div>
+  <div class="print-only" style="padding:.5rem .75rem .75rem;">
+    <div class="print-scores-title">Nonpartisan Voting Record Scores</div>
+    <table class="print-scores">
+      <tr><th>Scorecard</th><th>Nathan Johnson</th><th>Joe Jaworski</th></tr>
+      <tr><td class="score-label">TFR Fiscal Index</td><td>F every session (2019–2023)</td><td>No record — no TX legislative office</td></tr>
+      <tr><td class="score-label">Club for Growth TX</td><td>Near bottom among all TX senators (2019)</td><td>No record</td></tr>
+      <tr><td class="score-label">Bipartisan Note</td><td>Voted for bipartisan campus protest bill (one of few cross-aisle votes)</td><td>N/A — no legislative record</td></tr>
+      <tr><td colspan="3" class="score-source">Sources: index.texastaxpayers.com · clubforgrowthfoundation.org · Documented TX Senate floor votes</td></tr>
+    </table>
+  </div>
+</div><!-- /AG D -->
+</div><!-- /wrap D -->
+
+
+<!-- VERIFY SOURCES SECTION -->
+<div class="verify-section">
+  <div class="verify-inner">
+    <div class="verify-eyebrow">Verify Everything</div>
+    <div class="verify-headline">Check the work yourself.</div>
+    <div class="verify-sub">Every voting record score on ClearBallot traces back to one of the sources below. Each scores legislators based solely on documented votes — not editorial opinion. Click any source to verify directly. If you find an error, <a href="mailto:hello@clearballot.org" style="color:#52c97e;">let us know</a>.</div>
+    <div class="sources-grid">
+      <a class="source-card" href="https://heritageaction.com/scorecard" target="_blank">
+        <div class="source-name">Heritage Action Scorecard</div>
+        <div class="source-what">Scores U.S. Congress members on key conservative votes each session. Used for Cornyn and Roy.</div>
+        <span class="source-scope">Federal</span>
+      </a>
+      <a class="source-card" href="https://clubforgrowthfoundation.org" target="_blank">
+        <div class="source-name">Club for Growth Foundation</div>
+        <div class="source-what">Scores Congress and Texas state legislators on economic freedom and fiscal policy votes. Used for Middleton, Johnson.</div>
+        <span class="source-scope">Federal + Texas</span>
+      </a>
+      <a class="source-card" href="https://www.acuf.org/ratings" target="_blank">
+        <div class="source-name">American Conservative Union</div>
+        <div class="source-what">The oldest conservative scorecard in the U.S. — scores federal and state legislators on documented votes. Used for Cornyn, Paxton context.</div>
+        <span class="source-scope">Federal + State</span>
+      </a>
+      <a class="source-card" href="https://index.texastaxpayers.com" target="_blank">
+        <div class="source-name">Texans for Fiscal Responsibility</div>
+        <div class="source-what">Scores Texas legislators on budget, spending, and fiscal policy floor votes. Used for Middleton, Johnson, Goodwin.</div>
+        <span class="source-scope">Texas Only</span>
+      </a>
+      <a class="source-card" href="https://freedomindex.us" target="_blank">
+        <div class="source-name">Texas Freedom Index</div>
+        <div class="source-what">Scores Texas House and Senate members on adherence to constitutional limited-government principles using floor votes. Used for Goodwin.</div>
+        <span class="source-scope">Texas Only</span>
+      </a>
+      <a class="source-card" href="https://www.govtrack.us" target="_blank">
+        <div class="source-name">GovTrack</div>
+        <div class="source-what">Nonpartisan tracking of U.S. Congress votes, bill sponsorship, and bipartisanship statistics. Used for Roy.</div>
+        <span class="source-scope">Federal</span>
+      </a>
+      <a class="source-card" href="https://justfacts.votesmart.org" target="_blank">
+        <div class="source-name">VoteSmart</div>
+        <div class="source-what">Nonpartisan database of voting records, candidate positions, and interest group ratings since 1988. Used for cross-reference.</div>
+        <span class="source-scope">Federal + State</span>
+      </a>
+      <a class="source-card" href="https://www.rockwallvotes.com" target="_blank">
+        <div class="source-name">Rockwall County Elections Dept.</div>
+        <div class="source-what">Official source for all voting locations, dates, sample ballots, and election results for Rockwall County.</div>
+        <span class="source-scope">Official Record</span>
+      </a>
+    </div>
+  </div>
+</div>
+
+
+<!-- PRINT FOOTER -->
+<div class="print-foot print-only">
+  ClearBallot · clearballot.org · Nonpartisan civic voter information · Rockwall County, Texas · May 26, 2026 Primary Runoff<br>
+  Sources: Heritage Action · Club for Growth · ACU · Texans for Fiscal Responsibility · Texas Freedom Index · GovTrack · VoteSmart · Rockwall County Elections<br>
+  No endorsements are made. All voting record data is sourced from nonpartisan, vote-based organizations. Verify all data at the sources listed above.
+</div>
+
+
+<!-- FOOTER -->
+<footer class="foot">
+  <div class="foot-inner">
+    <div>
+      <div class="foot-logo">Clear<span>Ballot</span></div>
+      <div class="foot-tagline">Your record. Their record. You decide.</div>
+      <div class="foot-links">
+        <a href="index.html">Home</a>
+        <a href="https://heritageaction.com/scorecard" target="_blank">Heritage Action</a>
+        <a href="https://www.rockwallvotes.com" target="_blank">Rockwall Elections</a>
+        <a href="https://www.votetexas.gov" target="_blank">VoteTexas.gov</a>
+        <a href="mailto:hello@clearballot.org">Contact</a>
+      </div>
+    </div>
+    <div class="foot-right">
+      <div style="color:var(--paper);font-weight:500;margin-bottom:.3rem;">Serving</div>
+      <div>Rockwall County, TX</div>
+      <div style="margin-top:.4rem;font-size:.65rem;color:#605a50;">Expanding statewide</div>
+      <div style="margin-top:.8rem;">
+        <a href="https://www.rockwallvotes.com/wp-content/uploads/2026/04/Republican-Sample-Ballot-05.26.2026.pdf" target="_blank" style="font-size:.7rem;">Republican Sample Ballot ↗</a><br>
+        <a href="https://www.rockwallvotes.com/wp-content/uploads/2026/04/Democratic-Sample-Ballot-05.26.2026.pdf" target="_blank" style="font-size:.7rem;">Democratic Sample Ballot ↗</a>
+      </div>
+    </div>
+  </div>
+  <div class="foot-disc">
+    ClearBallot is a nonpartisan civic information project. We do not endorse any candidate, party, or political position. All voting record scores are sourced from independent, nonpartisan organizations and linked for verification. Voting records are drawn from any office the candidate has held, not limited to the office being sought. Where no voting record exists, placements are labeled Stated or Background and should be weighted accordingly. &copy; 2026 ClearBallot.
+  </div>
+</footer>
+
+</body>
+</html>
